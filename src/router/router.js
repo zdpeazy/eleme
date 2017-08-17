@@ -1,15 +1,20 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import App from '../App';
 
-Vue.use(Router)
+const hello = r => require.ensure([], () => r(require('../components/Hello')), 'hello');
 
-export default new Router({
-  routes: [
+export default [{
+  path: '/',
+  component: App, // 顶层路由，对应index.html
+  children: [ // 二级路由。对应App.vue
+    // 地址为空时跳转home页面
     {
-      path: '/',
-      name: 'Hello',
-      component: Hello
+      path: '',
+      redirect: '/home'
+    },
+    // 首页城市列表页
+    {
+      path: '/home',
+      component: hello
     }
   ]
-})
+}];
