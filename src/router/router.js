@@ -1,6 +1,6 @@
 import App from '../App';
 
-const hello = r => require.ensure([], () => r(require('../components/Hello')), 'hello');
+const home = r => require.ensure([], () => r(require('../page/home/home')), 'home');
 
 export default [{
   path: '/',
@@ -14,7 +14,7 @@ export default [{
     // 首页城市列表页
     {
       path: '/home',
-      component: hello
+      component: home
     }
   ]
 }];

@@ -7,7 +7,8 @@ import routes from './router/router';
 import {routerMode} from './config/env';
 import './config/rem';
 import FastClick from 'fastclick';
-// import App from './App';
+
+// import '@/style/index.styl';
 
 // 项目设置fastclick
 if ('addEventListener' in document) {
@@ -37,5 +38,5 @@ const router = new VueRouter({
 /* eslint-disable no-new */
 new Vue({
   router
-//  store
+  // store
 }).$mount('#app');
